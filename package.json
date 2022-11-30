@@ -1,0 +1,16 @@
+{
+  "name": "graphql-to-jsonschema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^15.8.0",
+    "graphql-2-json-schema": "^0.9.1"
+  }
+}

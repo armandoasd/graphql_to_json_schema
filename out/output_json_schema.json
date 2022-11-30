@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "properties": {
+    "Query": {
+      "type": "object",
+      "properties": {
+        "authors": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Author"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "books": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Book"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "booksByName": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/Book"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "$ref": "#/definitions/String"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    }
+  },
+  "definitions": {
+    "Author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/String"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "books": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Book"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    },
+    "String": {
+      "type": "string",
+      "title": "String",
+      "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+    },
+    "Book": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/String"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "author": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/Author"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    },
+    "Boolean": {
+      "type": "boolean",
+      "title": "Boolean",
+      "description": "The `Boolean` scalar type represents `true` or `false`."
+    }
+  }
+}
